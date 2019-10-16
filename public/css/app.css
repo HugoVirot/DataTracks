@@ -10645,11 +10645,21 @@ a.text-dark:focus {
 }
 
 .button-text-color {
-  color: #ff8282;
+  color: #e2e5e7;
 }
 
 body {
   background-color: white !important;
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Flama", sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+.m-b-md {
+  margin-bottom: 10px;
 }
 
 .row .col {
@@ -10682,13 +10692,13 @@ body {
 }
 
 .big-icon {
-  padding: 5px;
-  font-size: 100px;
-  color: #880000;
+  padding: 20px;
+  font-size: 50px;
+  color: #5f6a70;
 }
 
 .h1-color {
-  color: #880000;
+  color: #5f6a70;
   font-style: italic;
 }
 
@@ -10696,7 +10706,7 @@ body {
   position: fixed;
   opacity: 0.05;
   font-size: 228px;
-  color: #880000;
+  color: #5f6a70;
 }
 
 .color-active {
@@ -10719,11 +10729,11 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #880000;
+  background-color: #5f6a70;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
-  box-shadow: 3px 0px 10px #6e0000;
+  box-shadow: 3px 0px 10px #535d62;
 }
 
 /* navigation menu links */
@@ -10732,9 +10742,9 @@ body {
   padding: 8px 8px 8px 32px;
   width: 100%;
   text-decoration: none;
-  background-color: #880000;
+  background-color: #5f6a70;
   font-size: 18px;
-  color: #ff8282;
+  color: #e2e5e7;
   display: block;
   transition: 0.3s;
 }
@@ -10746,7 +10756,7 @@ body {
 
 .sidenav a:hover {
   color: white;
-  background-color: #d40000;
+  background-color: #849097;
 }
 
 .sidenav home {
@@ -10770,7 +10780,7 @@ body {
 }
 
 .card-admin:hover {
-  background-color: #a10000;
+  background-color: #6b777e;
   color: white;
 }
 
@@ -10783,7 +10793,7 @@ i:hover {
 }
 
 .admin-fa-color {
-  color: #880000;
+  color: #5f6a70;
 }
 
 .admin-fa-color:hover {
@@ -10791,6 +10801,7 @@ i:hover {
 }
 
 .a-no-decoration {
+  color: #676767;
   text-decoration: none !important;
   transition: 0.3s;
 }
