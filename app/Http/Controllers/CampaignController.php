@@ -12,16 +12,12 @@ class CampaignController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        return view ('quacks.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -46,7 +42,8 @@ class CampaignController extends Controller
      */
     public function show(Campaign $campaign)
     {
-        //
+        return view('campaigns.show');
+
     }
 
     /**
