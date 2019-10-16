@@ -17,7 +17,8 @@ class CreateCampaignsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('description',255)->nullable();
-
+            $table->date('date_start')->nullable();
+            $table->date('date_end')->nullable();
             $table->timestamps();
         });
     }
