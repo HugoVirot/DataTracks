@@ -16,13 +16,14 @@ class CampaignController extends Controller
 
     public function index()
     {
-        $campaigns = DB::table('campaigns')->get();
-        return view ('campaigns.index', ['campaigns'=>$campaigns]);
+//        $campaigns = DB::table('campaigns')->get();
+        $campaigns = Campaign::with('products')->get();
+        return view ('campaigns.index', ['campaigns' => $campaigns]);
     }
 
     public function create()
     {
-        //
+        return view('campaigns.create');
     }
 
     /**
@@ -33,7 +34,19 @@ class CampaignController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([     //method not found : ignorer, marche quand même (idem digidog)
+            'description' => 'required|min:5',
+            'date_start' => '',
+            'date_end' => '',     //erreur si mdp identique à l'ancien
+        ]);
+
+        $campaign = new Campaign;
+        $campaign->description = $request->input('description');
+        $campaign->date_start = $request->input('date_start');
+        $campaign->date_end = $request->input('date_end');
+        $campaign->save();
+
+        return redirect()->route('campaigns.index');
     }
 
     /**
