@@ -41,10 +41,8 @@ class CustomAuthController extends Controller
                             ]);
 
         $data = $request->all();
-        //unset($data['_token']);
         $data['role_id'] = 2;
         $data['enabled'] = true ;
-        //var_dump($data);die();
 
         $check = User::create($data);
 
