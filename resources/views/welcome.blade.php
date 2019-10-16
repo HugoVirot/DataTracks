@@ -78,7 +78,7 @@
 
         <div class="links">
             <a href="">Utilisateurs</a>
-            <a href="{{ route ('campaigns') }}">Campagnes</a>
+            <a href="{{ route ('campaigns.index') }}">Campagnes</a>
             <a href="">Logs</a>
         </div>
     </div>

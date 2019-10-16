@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Campaign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CampaignController extends Controller
 {
@@ -15,7 +16,8 @@ class CampaignController extends Controller
 
     public function index()
     {
-        return view ('quacks.index');
+        $campaigns = DB::table('campaigns')->get();
+        return view ('campaigns.index', ['campaigns'=>$campaigns]);
     }
 
     public function create()
