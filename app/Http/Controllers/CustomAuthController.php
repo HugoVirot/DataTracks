@@ -33,7 +33,7 @@ class CustomAuthController extends Controller
     {
         request()->validate([
                                 'name' => 'required',
-                                'name' => 'required',
+                                'surname' => 'required',
                                 'position' => 'required',
                                 'email' => 'required|email|unique:users',
                                 'password' => 'required|min:6',
