@@ -44,32 +44,9 @@ class CustomAuthController extends Controller
         $data['role_id'] = 2;
         $data['enabled'] = true ;
 
-        $check = User::create($data);
+        User::create($data);
 
         return Redirect::to("users")->withSuccess('Utilisateur créé avec succes.');
     }
 
-    public function dashboard()
-    {
-
-        if(Auth::check()){
-            return view('dashboard');
-        }
-        return Redirect::to("login")->withSuccess('Opps! You do not have access');
-    }
-
-    public function create(array $data)
-    {
-        return User::create([
-                                'name' => $data['name'],
-                                'email' => $data['email'],
-                                'password' => Hash::make($data['password'])
-                            ]);
-    }
-
-    public function logout() {
-        Session::flush();
-        Auth::logout();
-        return Redirect('home');
-    }
 }
