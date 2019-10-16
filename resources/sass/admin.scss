@@ -1,0 +1,230 @@
+// #461b4b #2f4858
+
+$bg-nav-color: darken(#D40000,15);
+$text-nav-color: lighten($bg-nav-color, 49);
+$text-hover: lighten($bg-nav-color, 89);
+
+.button-text-color{
+    color : $text-nav-color;
+}
+
+body {
+    background-color: lighten($bg-nav-color, 100%) !important;
+
+}
+
+.row {
+    .col {
+        width: 100% !important;
+
+        .form-group {
+            textarea {
+                width: 100% !important;
+
+            }
+
+            select {
+                width: 100% !important;
+            }
+        }
+    }
+
+}
+
+.adminImgLogo {
+    width: 145px;
+    height: 145px;
+    //filter: grayscale(1);
+
+}
+
+.adminImgLogoMenu {
+    position: relative;
+    top:0.6em;
+    width: 45px;
+    height: 45px;
+    //filter: grayscale(1);
+
+}
+
+
+
+.logo {
+    position: relative;
+    top: -50px;
+
+
+}
+
+.big-icon {
+    padding: 5px;
+    font-size: 100px;
+    color: $bg-nav-color;
+
+}
+
+.h1-color {
+    color: $bg-nav-color;
+    font-style: italic;
+}
+
+.vapor {
+    position: fixed;
+    opacity: 0.05;
+    font-size: 228px;
+    color: $bg-nav-color;
+}
+
+.color-active {
+    color: yellowgreen !important;
+}
+
+.wrapper-logo-admin {
+    position: relative;
+    padding: 8px 8px 8px 32px;
+    top: -13px;
+    left: -30px;
+}
+
+/* side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $bg-nav-color;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: 3px 0px 10px darken($bg-nav-color, 5%);
+}
+
+/* navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    width: 100%;
+
+    text-decoration: none;
+    background-color: $bg-nav-color;
+    font-size: 18px;
+    color: $text-nav-color;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a i{
+    position: relative;
+    left:-5px;
+}
+
+.sidenav a:hover {
+    color: $text-hover;
+    background-color: lighten($bg-nav-color, 15%);
+}
+.sidenav home {
+    background-color: $secondary!important;
+}
+.sidenav home:hover {
+
+}
+/* main right content */
+#main {
+    margin-left: 0px;
+}
+.main{
+    height :100vh;
+}
+/*  ****  CARD ****  */
+.card {
+    box-shadow: 3px 0px 5px darken($bg-nav-color, 55%);
+}
+
+.card-admin:hover {
+    background-color: lighten($bg-nav-color, 05%);
+    color: $text-hover;
+}
+
+.card-admin:hover i:not(:hover) {
+    color: $text-hover;
+}
+
+i:hover {
+    color: $text-hover;
+}
+.admin-fa-color{
+    color: $bg-nav-color;
+
+}
+.admin-fa-color:hover{
+    color: $text-hover;
+}
+.a-no-decoration{
+    text-decoration: none!important;
+    transition: 0.3s;
+}
+.a-no-decoration:hover{
+
+}
+.img-product-admin {
+    width: 4em;
+    height: 4em;
+}
+
+.small-img{
+    width: 4em;
+    height: 4em;
+}
+.icon-large{
+    font-size: 55px;
+}
+.toaster-info {
+    opacity: 0;
+    animation-duration: 7.5s;
+    animation-name: getOut;
+
+}
+
+.hr-note {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 10px 0 10px;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 8px;
+    line-height: 1;
+    border-top: 1px solid black;
+}
+
+
+
+@keyframes getOut {
+    from {
+
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        // background-color: lightblue;
+    }
+    #main {
+        margin-left: 0px;
+    }
+
+    .row{
+        width:100%!important;
+        margin:0px!important;
+        padding:0px!important;
+    }
+
+}

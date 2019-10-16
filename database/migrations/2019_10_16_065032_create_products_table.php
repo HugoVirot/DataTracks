@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Role;
 
-class CreateUsersTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,22 +13,18 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('role_id');
             $table->string('name');
-            $table->string('surname');
-            $table->string('email')->unique();
-
-            $table->string('password');
-            $table->string('position');
-            $table->boolean('enabled');
-
-
-
+            $table->string('description');
+            $table->string('photo_url');
+            $table->float('price');
+            $table->float('sellPrice');
+            $table->float('PromoPrice');
+            $table->boolean('stock');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('role_id')->references('id')->on('roles');
+
         });
     }
 
@@ -40,6 +35,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('products');
     }
+
+
 }

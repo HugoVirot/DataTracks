@@ -22,7 +22,7 @@
 
 <div id="mySidenav" class="sidenav">
 
-    <a class="justify-content-center align-items-center logo" href="{{route('home')}}">
+    <a class="justify-content-center align-items-center logo" href="{{route('admin.index')}}">
         <div class="wrapper-logo-admin d-flex flex-row justify-content-center align-items-center">
             <img src="{{asset('assets/imgs/logo-cre.svg')}}" class="adminImgLogoMenu" alt="Global notes logo">
         </div>
@@ -32,9 +32,9 @@
     <a href="/admin" ><i class="far fa-address-book mr-3"></i></a>
     <a href="//admin"><i class="fas fa-fingerprint mr-3"></i></a>
     <hr>
-    <a href=""><i class="fas fa-folder mr-3"></i></a>
-    <a href=""> <i class="fas fa-clipboard mr-3"></i></a>
-    <a href=""><i class="far fa-sticky-note mr-3"></i></a>
+    <a href="{{route('admin.folders.index')}}"><i class="fas fa-folder mr-3"></i></a>
+    <a href="{{route('admin.blocknotes.index')}}"> <i class="fas fa-clipboard mr-3"></i></a>
+    <a href="{{route('admin.notes.index')}}"><i class="far fa-sticky-note mr-3"></i></a>
 
 
 
@@ -63,6 +63,3 @@
 </body>
 
 </html>
-
-
-
