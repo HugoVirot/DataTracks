@@ -18,9 +18,7 @@
             </div>
             <div class="row mt-0">
                 <div class="col-12 text-center mb-3 border-2 rounded">
-
                     <i class="fas fa-database w-100 big-icon text-light"></i>
-
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     <a class="a-no-decoration" href="">
