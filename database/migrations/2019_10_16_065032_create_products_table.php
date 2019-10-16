@@ -18,11 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('photo_url');
-            $table->float('price');
-            $table->float('sellPrice');
-            $table->float('PromoPrice');
+            $table->string('price');
+            $table->string('sellPrice');
+            $table->string('PromoPrice');
             $table->boolean('stock');
-            $table->rememberToken();
             $table->timestamps();
 
         });
