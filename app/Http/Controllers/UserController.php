@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+//        $users = User::where('role_id', 2)->get();
+
+        return view('user.user');
     }
 
     /**
@@ -46,9 +49,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->userRepository->getById($id);
-
-        return view('show',  compact('user'));
+       //
     }
 
     /**
