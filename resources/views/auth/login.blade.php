@@ -10,7 +10,7 @@
                 <span class="card-body">
 
                    <div class="w-100  title-card  pb-3">
-                        <div class="h1T w-100 flex-row justify-con">
+                        <div class="h1T w-100 flex-row justify-content-center">
                             <span>DATATracks V. 1.0 </span>
                                 <i class="iT fas fa-user badge-light"></i>
                         </div>
