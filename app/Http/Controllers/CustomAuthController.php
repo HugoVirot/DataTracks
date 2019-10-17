@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
 Use App\User;
@@ -41,9 +42,10 @@ class CustomAuthController extends Controller
                             ]);
 
         $data = $request->all();
-        $data['role_id'] = 2;
+        $role = Role::where('name','admin')->get();
+        $data['role_id'] = $role[0]->id;
         $data['enabled'] = true ;
-
+        $data['password'] = Hash::make($data['password']) ;
         User::create($data);
 
         return Redirect::to("users")->withSuccess('Utilisateur créé avec succes.');
