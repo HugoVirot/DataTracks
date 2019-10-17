@@ -38,7 +38,7 @@
                     </a>
                 </div>
                 <div class="col-md-12 col-lg-4">
-                    <a class="a-no-decoration" href="">
+                    <a class="a-no-decoration" href="campaigns">
                         <div class="card mb-3 card-admin">
                             <div class="row no-gutters">
                                 <div class="col-md-4">

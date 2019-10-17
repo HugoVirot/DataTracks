@@ -39,3 +39,6 @@ Route::resource('logs','LogController',['only' => ['index']]);
 Route::delete('logs','LogController@destroyAll')->name('deleteAllLogs');
 //
 Route::resource('users', 'UsersController');
+
+Route::resource('/campaigns', 'CampaignController');
+
