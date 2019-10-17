@@ -79,6 +79,7 @@ class CampaignController extends Controller
     {
         $campaignProductsIDs = DB::table('campaign_product')->where('campaign_id', '=', $campaign->id)->get('product_id');
         $products = DB::table('products')->get();
+
         return view('campaigns.update', ['campaign' => $campaign, 'products' => $products, 'campaignProductsIDs' => $campaignProductsIDs]);
     }
 

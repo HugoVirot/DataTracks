@@ -27,13 +27,16 @@
                     @foreach ($products as $product)
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox"
-{{--                                   @if (in_array($product->id, $campaignProductsIDs['items']))--}}
-{{--                                   checked="checked"--}}
-{{--                                   @endif--}}
-                                   class="custom-control-input" name="product{{ $product -> id }}"
-                                   value={{ $product -> id }}  id="product{{ $product -> id }}">
+                                   @foreach ($campaignProductsIDs as $cP)
+                                       @if ($product->id == $cP->product_id))
+                                           checked="checked"
+                                            @break
+                                       @endIf
+                                   @endforeach
+                                   class="custom-control-input" name="product{{ $product->id }}"
+                                   value={{ $product -> id }}  id="product{{ $product->id }}">
                             <label class="custom-control-label"
-                                   for="product{{ $product -> id }}">{{ $product -> name }}</label>
+                                   for="product{{ $product->id }}">{{ $product->name }}</label>
                         </div>
                     @endforeach
                 </div>
