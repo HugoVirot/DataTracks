@@ -24,4 +24,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Home
 Route::get('/', 'HomeController@index')->name('home');
 
-//
+
+// logs
+Route::resource('logs','LogController',['only' => ['index']]);
+
+Route::delete('logs','LogController@destroyAll')->name('deleteAllLogs');
