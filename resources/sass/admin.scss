@@ -1,6 +1,6 @@
 // #461b4b #2f4858
 
-$bg-nav-color: darken(#D40000,15);
+$bg-nav-color: #5f6a70;
 $text-nav-color: lighten($bg-nav-color, 49);
 $text-hover: lighten($bg-nav-color, 89);
 
@@ -10,9 +10,17 @@ $text-hover: lighten($bg-nav-color, 89);
 
 body {
     background-color: lighten($bg-nav-color, 100%) !important;
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Flama', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
 
 }
-
+.m-b-md {
+    margin-bottom: 10px;
+}
 .row {
     .col {
         width: 100% !important;
@@ -57,8 +65,8 @@ body {
 }
 
 .big-icon {
-    padding: 5px;
-    font-size: 100px;
+    padding: 20px;
+    font-size: 50px;
     color: $bg-nav-color;
 
 }
@@ -160,6 +168,7 @@ i:hover {
     color: $text-hover;
 }
 .a-no-decoration{
+    color : darken(gray,10);
     text-decoration: none!important;
     transition: 0.3s;
 }
