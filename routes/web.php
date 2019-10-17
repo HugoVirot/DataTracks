@@ -12,11 +12,25 @@
 */
 
 
-Auth::routes();
 
+// Authentication Routes...
+
+// provisoirement on utilise que ces routes pour l'auth
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+// Custom registration  // on va definir nous même le comportement
+// de la registration ...
+Route::get('registration', 'CustomAuthController@registration')->name('auth.custom.Registration');
+Route::post('post-registration', 'CustomAuthController@postRegistration');
+
+
+
+
+// Home
 Route::get('/', 'HomeController@index')->name('home');
 
-
-Route::resource('user', 'UserController');
-
-
+//
+Route::resource('users', 'UsersController');
