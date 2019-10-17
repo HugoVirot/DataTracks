@@ -56,12 +56,10 @@ class CustomAuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
 
-
-//        $user = User::find($id);
-        return view('auth.custom.registartion.edit', compact('user'));
+        return view('auth.customRegistration.edit', ['user' => $user]);
     }
 
     /**
@@ -71,16 +69,19 @@ class CustomAuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         request()->validate([
             'name' => 'required',
             'surname' => 'required',
             'position' => 'required',
-            'email' => 'required|email|unique:users',
         ]);
-        
-        User::update($id, $request->all());
+        $user->name = $request->input('name');
+        $user->surname = $request->input('surname');
+        $user->position = $request->input('position');
+
+        $user->save();
+
         return Redirect::to("users")->withSuccess('Utilisateur modifié avec succes.');
     }
 

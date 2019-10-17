@@ -30,19 +30,15 @@
                             {{csrf_field()}}
                             <div class="field">
                                 <div class="contral">
-                                    <button type="submit" class="button">Supprimer</button>
+                                    <button type="submit" class="btn btn-secondary">Supprimer</button>
                                 </div>
                             </div>
                         </form></td>
-                    <td><form method="POST" action={{route('auth.custom.registartion.edit',[$user->id])}}>
-                            {{method_field('HEAD')}}
-                            {{csrf_field()}}
-                            <div class="field">
-                                <div class="contral">
-                                    <button type="submit" class="button">Modifier</button>
-                                </div>
-                            </div>
-                        </form></td>                </tr>
+
+                    <td><a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" >modifier</a>
+
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>

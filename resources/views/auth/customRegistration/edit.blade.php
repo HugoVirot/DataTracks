@@ -13,16 +13,15 @@
                                 Retour
                             </a>
                         </div>
+
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
-                                @foreach($users as $user)
-
                                     <h3 class="login-heading mb-4">Modifier Utilisateur </h3>
-                                    <form action="{{url('post-registration')}}" method="POST" id="regForm">
+                                    <form action="{{url('registrationUpdate', $user)}}" method="POST" id="regForm">
                                         {{ csrf_field() }}
                                         <div class="form-label-group">
                                             <label for="inputName">Name</label>
-                                            <input type="text" id="inputName" name="name" class="form-control" value=$user->name autofocus>
+                                            <input type="text" id="inputName" name="name" class="form-control" value={{$user->name}} autofocus>
 
 
                                             @if ($errors->has('name'))
@@ -33,7 +32,7 @@
 
                                         <div class="form-label-group">
                                             <label for="inputSurName">SurName</label>
-                                            <input type="text" id="inputSurName" name="surname" class="form-control" value=$user->surname autofocus>
+                                            <input type="text" id="inputSurName" name="surname" class="form-control" value={{$user->surname}} autofocus>
 
 
                                             @if ($errors->has('surname'))
@@ -44,7 +43,7 @@
 
                                         <div class="form-label-group">
                                             <label for="inputPosition">Poste</label>
-                                            <input type="text" id="inputPosition" name="position" class="form-control" value=$user->position autofocus>
+                                            <input type="text" id="inputPosition" name="position" class="form-control" value={{$user->position}} autofocus>
 
 
                                             @if ($errors->has('position'))
@@ -52,23 +51,11 @@
                                             @endif
 
                                         </div>
-
-                                        <div class="form-label-group">
-                                            <label for="inputEmail">Email address</label>
-                                            <input type="email" name="email" id="inputEmail" class="form-control" value=$user->email >
-
-
-                                            @if ($errors->has('email'))
-                                                <span class="error">{{ $errors->first('email') }}</span>
-                                            @endif
-                                        </div>
-
                                         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">
                                             Valider
                                         </button>
 
                                     </form>
-                                    @endforeach
                             </div>
                         </div>
                     </div>
