@@ -10,7 +10,7 @@
                 <span class="card-body">
 
                    <div class="w-100  title-card  pb-3">
-                        <div class="h1T w-100 flex-row justify-con">
+                        <div class="h1T w-100 flex-row justify-content-center">
                             <span>DATATracks V. 1.0 </span>
                                 <i class="iT fas fa-user badge-light"></i>
                         </div>
@@ -35,8 +35,7 @@
                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">

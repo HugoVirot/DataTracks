@@ -21,7 +21,7 @@
                     <i class="fas fa-database w-100 big-icon text-light"></i>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4">
-                    <a class="a-no-decoration" href="">
+                    <a class="a-no-decoration" href="{{route('users.index')}}">
                         <div class="card mb-3 card-admin">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
