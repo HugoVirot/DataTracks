@@ -40,4 +40,10 @@ class User extends Authenticatable
     public function role(){
         return $this->hasOne('App\Role');
     }
+
+
+    public function isSuperAdmin(User $user){
+        $role = Role::where('name','super_admin')->get();
+        return $user->role_id === $role[0]->id;
+    }
 }

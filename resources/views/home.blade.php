@@ -55,25 +55,26 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-12 col-lg-4">
-                    <a class="a-no-decoration" href="">
-                        <div class="card mb-3 card-admin">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <i class="far far fa-sticky-note big-icon"></i>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Logs <strong></strong></h5>
-                                        <p class="card-text">Gestion des logs erreur</p>
+                @if (Auth::user()->isSuperAdmin(Auth::user()))
+                    <div class="col-md-12 col-lg-4">
+                        <a class="a-no-decoration" href="{{route('logs.index')}}">
+                            <div class="card mb-3 card-admin">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <i class="far far fa-sticky-note big-icon"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Logs <strong></strong></h5>
+                                            <p class="card-text">Gestion des logs erreur</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-
+                        </a>
+                    </div>
             </div>
+            @endif
             <hr>
             <div class="row mt-1 mb-5">
                 <div class="col-12 text-center mb-3 border-2 rounded">
