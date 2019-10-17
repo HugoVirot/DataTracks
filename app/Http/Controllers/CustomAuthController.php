@@ -50,5 +50,49 @@ class CustomAuthController extends Controller
 
         return Redirect::to("users")->withSuccess('Utilisateur créé avec succes.');
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
 
+
+//        $user = User::find($id);
+        return view('auth.custom.registartion.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        request()->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'position' => 'required',
+            'email' => 'required|email|unique:users',
+        ]);
+        
+        User::update($id, $request->all());
+        return Redirect::to("users")->withSuccess('Utilisateur modifié avec succes.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        User::find($id)->delete();
+        return redirect('/users');
+    }
 }

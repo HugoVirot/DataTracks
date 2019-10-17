@@ -25,6 +25,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // de la registration ...
 Route::get('registration', 'CustomAuthController@registration')->name('auth.custom.Registration');
 Route::post('post-registration', 'CustomAuthController@postRegistration');
+Route::get('edit', 'CustomAuthController@edit')->name('auth.custom.registartion.edit');
 
 
 
