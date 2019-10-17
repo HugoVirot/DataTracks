@@ -17,7 +17,7 @@ class CampaignController extends Controller
     public function index()
     {
         $campaigns = Campaign::with('products')->get();
-        return view ('campaigns.index', ['campaigns' => $campaigns]);
+        return view('campaigns.index', ['campaigns' => $campaigns]);
     }
 
     public function create()
@@ -29,7 +29,7 @@ class CampaignController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,7 +60,7 @@ class CampaignController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Campaign  $campaign
+     * @param \App\Campaign $campaign
      * @return \Illuminate\Http\Response
      */
     public function show(Campaign $campaign)
@@ -72,30 +72,47 @@ class CampaignController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Campaign  $campaign
+     * @param \App\Campaign $campaign
      * @return \Illuminate\Http\Response
      */
     public function edit(Campaign $campaign)
     {
-        return view('campaign.update', ['campaign' => $campaign]);
+        $campaignProductsIDs = DB::table('campaign_product')->where('campaign_id', '=', $campaign->id)->get('product_id');
+        $products = DB::table('products')->get();
+        return view('campaigns.update', ['campaign' => $campaign, 'products' => $products, 'campaignProductsIDs' => $campaignProductsIDs]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Campaign  $campaign
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Campaign $campaign
+     * @return bool
      */
     public function update(Request $request, Campaign $campaign)
     {
-        //
+
+        $products = DB::table('products')->get();
+
+
+        for ($i = 0; $i < count($products); $i++)
+        {
+            $campaign->products()->detach($products[$i]);
+            if (isset ($request['product' . $i]))
+            {
+                $campaign->products()->attach([$request['product' . $i]]);
+            }
+        }
+
+        $campaign->save();
+        return redirect()->route('campaigns.index')->with('message', 'La campagne a bien été modifiée');
     }
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Campaign  $campaign
+     * @param \App\Campaign $campaign
      * @return \Illuminate\Http\Response
      */
     public function destroy(Campaign $campaign)
