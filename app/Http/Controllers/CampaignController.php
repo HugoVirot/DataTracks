@@ -101,7 +101,7 @@ class CampaignController extends Controller
         }
         $campaign->save(); // we have to save here before next step.
 
-        // then attach the consernede products
+        // then attach the products
         for ($i = 0; $i < count($products); $i++)
         {
             if (isset ($request['product' . ($i+1)]))
