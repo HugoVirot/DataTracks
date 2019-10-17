@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <main class="container">
         <div class="col-md-10 m-auto">
             <div class="container-fluid">
@@ -25,7 +26,7 @@
                         {{-- @method('PUT')--}}
                         <div class="form-group">
                             <label for="content">Nom de la campagne</label>
-                            <input required  class="form-control" type="text" name="description" id="description">
+                            <input required class="form-control" type="text" name="description" id="description">
                         </div>
                         <div class="row">
                             <div class="col-6 form-group">
@@ -41,7 +42,15 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Produits</label>
-                            <input required  class="form-control" type="text" name="products" id="products">
+                            {{--                            <input required  class="form-control" type="text" name="products" id="products">--}}
+                            @foreach ($products as $product)
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="product{{ $product -> id }} " value={{ $product -> id }}  id="product{{ $product -> id }}">
+                                    <label class="custom-control-label"
+                                           for="product{{ $product -> id }}">{{ $product -> name }}</label>
+                                </div>
+                                {{--                                        onclick="addToList({{ $product -> name }}); showList()"--}}
+                            @endforeach
                         </div>
                         <button type="submit" class="btn btn-secondary">Valider</button>
                     </form>
@@ -49,8 +58,23 @@
             </div>
         </div>
     </main>
+    {{--<script>--}}
+    {{--    var chosenProducts = {};--}}
+
+    {{--function addToList(name) {--}}
+    {{--    chosenProducts.push(name);--}}
+    {{--    return chosenProducts--}}
+    {{--}--}}
+
+    {{--function showList(){--}}
+    {{--    for (var product in chosenProducts)--}}
+    {{--    {--}}
+    {{--        document.getElementById(chosenProducts).innerHTML += product;--}}
+    {{--    }--}}
+    {{--}--}}
+
+    {{--</script>--}}
+
 @endsection
 
-{{--                    @if($errors->has('password_confirmation'))--}}
-{{--                        <p class="help is-danger">{{ $errors->first('password_confirmation') }}</p>--}}
-{{--                    @endif--}}
+

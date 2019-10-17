@@ -16,14 +16,14 @@ class CampaignController extends Controller
 
     public function index()
     {
-//        $campaigns = DB::table('campaigns')->get();
         $campaigns = Campaign::with('products')->get();
         return view ('campaigns.index', ['campaigns' => $campaigns]);
     }
 
     public function create()
     {
-        return view('campaigns.create');
+        $products = DB::table('products')->get();
+        return view('campaigns.create', ['products' => $products]);
     }
 
     /**
@@ -34,6 +34,7 @@ class CampaignController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([     //method not found : ignorer, marche quand même (idem digidog)
             'description' => 'required|min:5',
             'date_start' => '',
@@ -46,6 +47,13 @@ class CampaignController extends Controller
         $campaign->date_end = $request->input('date_end');
         $campaign->save();
 
+        $products = DB::table('products')->get();
+
+        for ($i = 0; $i < count($products); $i++) {
+            if (isset ($request['product' . $i])) {
+                $campaign->products()->attach([$request['product' . $i]]);
+            }
+        }
         return redirect()->route('campaigns.index');
     }
 
@@ -69,7 +77,7 @@ class CampaignController extends Controller
      */
     public function edit(Campaign $campaign)
     {
-        //
+        return view('campaign.update', ['campaign' => $campaign]);
     }
 
     /**
