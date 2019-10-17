@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Campaign;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -93,19 +94,23 @@ class CampaignController extends Controller
     public function update(Request $request, Campaign $campaign)
     {
 
-        $products = DB::table('products')->get();
+        $products = Product::all();
+        // detaching all products
+        for ($i = 0; $i < count($products); $i++){
+            $campaign->products()->detach($products[$i]);
+        }
+        $campaign->save(); // we have to save here before next step.
 
-
+        // then attach the consernede products
         for ($i = 0; $i < count($products); $i++)
         {
-            $campaign->products()->detach($products[$i]);
-            if (isset ($request['product' . $i]))
+            if (isset ($request['product' . ($i+1)]))
             {
-                $campaign->products()->attach([$request['product' . $i]]);
+                $campaign->products()->attach([$request['product' . ($i+1)]]);
             }
         }
-
         $campaign->save();
+
         return redirect()->route('campaigns.index')->with('message', 'La campagne a bien été modifiée');
     }
 
