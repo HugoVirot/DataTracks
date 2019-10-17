@@ -45,7 +45,7 @@
                             {{--                            <input required  class="form-control" type="text" name="products" id="products">--}}
                             @foreach ($products as $product)
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="product{{ $product -> id }} " value={{ $product -> id }}  id="product{{ $product -> id }}">
+                                    <input type="checkbox" class="custom-control-input" name="product{{ $product -> id }}" value={{ $product -> id }}  id="product{{ $product -> id }}">
                                     <label class="custom-control-label"
                                            for="product{{ $product -> id }}">{{ $product -> name }}</label>
                                 </div>
