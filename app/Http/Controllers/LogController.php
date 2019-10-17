@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LogController extends Controller
 {
@@ -14,8 +15,11 @@ class LogController extends Controller
 
     public function index()
     {
-        $logs = Log::all();
+        if (!Auth::user()->isSuperAdmin(Auth::user())){
+            return view('home');
+        }
 
+        $logs = Log::all();
         return view('logs.index',['logs' => $logs]);
     }
     public function destroyAll()

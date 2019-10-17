@@ -31,12 +31,12 @@
                         <div class="row">
                             <div class="col-6 form-group">
                                 <label for="nom">Date de début</label>
-                                <input required type="text" class="form-control" name="date_start" id="date_start">
+                                <input required type="text" class="form-control" name="date_start" id="date_start" placeholder="YYYY-MM-DD">
                             </div>
                             <div class="col-6 form-group">
                                 <label class="label">Date de fin</label>
                                 <div class="control">
-                                    <input required class="form-control" type="text" name="date_end" id="date_end">
+                                    <input required class="form-control" type="text" name="date_end" id="date_end" placeholder="YYYY-MM-DD">
                                 </div>
                             </div>
                         </div>

@@ -59,6 +59,11 @@ class CustomAuthController extends Controller
     public function edit(User $user)
     {
 
+        if (!Auth::user()->isSuperAdmin(Auth::user())){
+            $users = User::where('role_id' , 2)->get();
+            return view('users.index', ['users' => $users]);
+        }
+
         return view('auth.customRegistration.edit', ['user' => $user]);
     }
 

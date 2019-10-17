@@ -37,8 +37,8 @@ class CampaignController extends Controller
 
         $request->validate([     //method not found : ignorer, marche quand même (idem digidog)
             'description' => 'required|min:5',
-            'date_start' => '',
-            'date_end' => '',     //erreur si mdp identique à l'ancien
+            'date_start' => 'required|date',
+            'date_end' => 'required|date',     //erreur si mdp identique à l'ancien
         ]);
 
         $campaign = new Campaign;
