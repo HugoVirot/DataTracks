@@ -10645,7 +10645,7 @@ a.text-dark:focus {
 }
 
 .button-text-color {
-  color: #e2e5e7;
+  color: #b0bbc8;
 }
 
 body {
@@ -10694,11 +10694,11 @@ body {
 .big-icon {
   padding: 20px;
   font-size: 50px;
-  color: #5f6a70;
+  color: #343E4A;
 }
 
 .h1-color {
-  color: #5f6a70;
+  color: #343E4A;
   font-style: italic;
 }
 
@@ -10707,7 +10707,7 @@ body {
   top: 60px;
   opacity: 0.05;
   font-size: 228px;
-  color: #5f6a70;
+  color: #343E4A;
 }
 
 .color-active {
@@ -10730,11 +10730,11 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #5f6a70;
+  background-color: #343E4A;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
-  box-shadow: 3px 0px 10px #535d62;
+  box-shadow: 3px 0px 10px #29313b;
 }
 
 /* navigation menu links */
@@ -10743,9 +10743,9 @@ body {
   padding: 8px 8px 8px 32px;
   width: 100%;
   text-decoration: none;
-  background-color: #5f6a70;
+  background-color: #343E4A;
   font-size: 18px;
-  color: #e2e5e7;
+  color: #b0bbc8;
   display: block;
   transition: 0.3s;
 }
@@ -10757,7 +10757,7 @@ body {
 
 .sidenav a:hover {
   color: white;
-  background-color: #849097;
+  background-color: #546477;
 }
 
 .sidenav home {
@@ -10789,7 +10789,7 @@ body {
 }
 
 .card .card-body .title-card {
-  background-color: #5f6a70;
+  background-color: #343E4A;
   padding: 0px;
   margin: 0 auto;
   width: 100%;
@@ -10798,7 +10798,7 @@ body {
 
 .card .card-body .title-card .h1T {
   position: absolute;
-  color: #e5e8e9;
+  color: #b3bdca;
   width: 99%;
   top: 66px;
   font-weight: bold;
@@ -10815,7 +10815,7 @@ body {
   top: -3px;
   right: 5px;
   float: right;
-  color: #5f6a70;
+  color: #343E4A;
 }
 
 .card .card-body-user {
@@ -10824,7 +10824,7 @@ body {
 }
 
 .card .card-body-user .title-card {
-  background-color: #5f6a70;
+  background-color: #343E4A;
   padding: 0px;
   margin: 0 auto;
   width: 100%;
@@ -10833,7 +10833,7 @@ body {
 
 .card .card-body-user .title-card .h1T {
   position: absolute;
-  color: #e5e8e9;
+  color: #b3bdca;
   width: 99%;
   top: 11px;
   font-weight: bold;
@@ -10850,7 +10850,7 @@ body {
   top: -3px;
   right: 5px;
   float: right;
-  color: #5f6a70;
+  color: #343E4A;
 }
 
 .card .card-body-user .title-card-2 {
@@ -10863,7 +10863,7 @@ body {
 
 .card .card-body-user .title-card-2 .h2T {
   position: absolute;
-  color: #343E4A;
+  color: #5F6A70;
   width: 99%;
   top: 66px;
   font-weight: bold;
@@ -10880,11 +10880,28 @@ body {
   top: -3px;
   right: 700px;
   float: right;
-  color: #5f6a70;
+  color: #5F6A70;
+}
+
+.card .card-body-user .tab-card {
+  background-color: #5F6A70;
+  padding: 0px;
+  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+  color: white;
+}
+
+.card .card-body-user .tab-ligne {
+  background-color: #D6F1FC;
+}
+
+.card .card-body-user .modify {
+  color: #5F6A70;
 }
 
 .p-title {
-  color: #849097;
+  color: #546477;
   font-size: 55px;
   padding: 0;
   margin: 0;
@@ -10900,14 +10917,14 @@ body {
 
 .p-version {
   text-align: center;
-  color: #849097;
+  color: #546477;
   font-size: 15px;
   padding: 0;
   margin: 0;
 }
 
 .card-admin:hover {
-  background-color: #6b777e;
+  background-color: #3f4b59;
   color: white;
 }
 
@@ -10920,7 +10937,7 @@ i:hover {
 }
 
 .admin-fa-color {
-  color: #5f6a70;
+  color: #343E4A;
 }
 
 .admin-fa-color:hover {

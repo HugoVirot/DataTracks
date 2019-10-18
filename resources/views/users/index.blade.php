@@ -7,9 +7,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-8 col-lg-12">
                 <div class="card card-flat">
-
 
                 <span class="card-body-user">
 
@@ -25,10 +24,9 @@
                                     <span>Liste des utilisateurs</span>
                        </div>
                    </div>
-                </span>
                     <table class ="table">
                         <thead>
-                        <tr class="title-user">
+                        <tr class="tab-card">
                             <th>name</th>
                             <th>surname</th>
                             <th>email</th>
@@ -39,36 +37,38 @@
                         </thead>
                         <tbody>
                             @foreach($users as $user)
-                            <tr>
+                                <tr class = "tab-ligne">
                                 <td>{{$user->name }}</td>
                                 <td>{{$user->surname }}</td>
                                 <td>{{$user->email }}</td>
                                 <td>{{$user->position }}</td>
                                 <td>@if(Auth::user()->isSuperAdmin(Auth::user()))
-                                    <form method="POST" action="/users/{{$user->id}}">
+                                        <form method="POST" action="/users/{{$user->id}}">
                                         {{method_field('DELETE')}}
-                                        {{csrf_field()}}
+                                            {{csrf_field()}}
                                         <div class="field">
                                             <div class="contral">
                                                 <button type="submit" class="btn btn-secondary">Supprimer</button>
                                             </div>
                                         </div>
                                     </form>
-                                        @endif
+                                    @endif
                                 </td>
 
                                 <td>@if(Auth::user()->isSuperAdmin(Auth::user()))
-                                    <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" >modifier</a>
+                                        <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" >modifier</a>
                                     @endif
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    @if(Auth::user()->isSuperAdmin(Auth::user()))
-                        <a href="{{route('auth.custom.Registration')}}">Create User</a>
-                        @endif
+                    </span>
+
                 </div>
+                @if(Auth::user()->isSuperAdmin(Auth::user()))
+                    <a class= "btn btn-secondary" href="{{route('auth.custom.Registration')}}">Create User</a>
+                @endif
             </div>
         </div>
     </div>

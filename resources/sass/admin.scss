@@ -1,8 +1,10 @@
 // #461b4b #2f4858
 
-$bg-nav-color: #5f6a70;
+$bg-nav-color: #343E4A;
 $text-nav-color: lighten($bg-nav-color, 49);
 $text-hover: lighten($bg-nav-color, 89);
+$secondary-color-2: #5F6A70;
+$secondary-color-1: #D6F1FC;
 
 .button-text-color {
     color: $text-nav-color;
@@ -245,7 +247,7 @@ body {
 
             .h2T {
                 position: absolute;
-                color: #343E4A;
+                color: $secondary-color-2;
                 width: 99%;
                 top: 66px;
                 font-weight: bold;
@@ -262,11 +264,25 @@ body {
                     top: -3px;
                     right: 700px;
                     float: right;
-                    color: $bg-nav-color;
+                    color: $secondary-color-2;
                 }
 
             }
 
+        }
+        .tab-card {
+            background-color: $secondary-color-2;
+            padding: 0px;
+            margin: 0 auto;
+            width: 100%;
+            height: 50px;
+            color: white;
+        }
+        .tab-ligne {
+            background-color: $secondary-color-1;
+        }
+        .modify {
+            color: $secondary-color-2;
         }
 
     }
