@@ -46,8 +46,8 @@
                             <input type="hidden" name="id" id="id" value="{{ $campaign->id }}">
                         </div>
                         <div class="col-6">
-                            <a href="{{ route('campaigns.index') }}">
-                                <button class="btn btn-secondary">Annuler</button>
+                            <a class="btn btn-secondary" href="{{ route('campaigns.index') }}">
+                                Annuler
                             </a>
                         </div>
                         <div class="col-6">

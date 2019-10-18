@@ -63,8 +63,8 @@
                             <div class="row">
                             <div class="col-4"></div>
                             <div class="col-4">
-                                <a href="{{ route('campaigns.index') }}">
-                                    <button class="btn btn-secondary">Annuler</button>
+                                <a class="btn btn-secondary" href="{{ route('campaigns.index') }}">
+                                    Annuler
                                 </a>
                                 <button type="submit" class="btn btn-secondary">Valider</button>
                             </div>
