@@ -10704,6 +10704,7 @@ body {
 
 .vapor {
   position: fixed;
+  top: 60px;
   opacity: 0.05;
   font-size: 228px;
   color: #5f6a70;
