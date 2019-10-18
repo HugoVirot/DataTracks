@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('title')
-    <h1>Liste des messages d'erreur</h1>
+    Liste des messages d'erreur
 @endsection
 
 @section('content')
