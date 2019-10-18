@@ -13,7 +13,7 @@ class ProductsSeeder extends Seeder
     public function run()
     {
         for ($i=0; $i<=9; $i++){
-            Product::create(['name' => 'Nom du produits '. ($i+1) . '  (ex: Casque sans fil Bose QuietComfort 35 II Noir + Google Assistant)',
+            Product::create(['name' => 'Produit ' . ($i+1),
                 'description' => 'description (ex: Réduction de bruit ultra performante Bluetooth et NFC avec invites vocales, Assistant Google intégré, Son équilibré, quel que soit le volume)',
                 'photo_url' => 'https://picsum.photos/200/300',
                 'price' => '349€99',

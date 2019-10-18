@@ -7,73 +7,74 @@
 @section('content')
 
     <main class="container">
-{{--        <div class="container text-center mt-3">--}}
-{{--            @if ($errors->any())--}}
-{{--                <div class="alert alert-danger">--}}
-{{--                    <ul>--}}
-{{--                        @foreach ($errors->all() as $error)--}}
-{{--                            <li>{{ $error }}</li>--}}
-{{--                        @endforeach--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            @endif--}}
-{{--            @if ($messages->any())--}}
-{{--                <div class="alert alert-success">--}}
-{{--                    <ul>--}}
-{{--                        @foreach ($messages->all() as $message)--}}
-{{--                            <li>{{ $message }}</li>--}}
-{{--                        @endforeach--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            @endif--}}
-{{--        </div>--}}
         <div class="container text-center mt-3">
-            <h2 class="mb-3">Liste des campagnes</h2>
-            <a href="{{ route('campaigns.create') }}">
-                <button class="btn btn-primary mb-3">Créer une campagne</button>
-            </a>
-            <div class="row">
-                <div class="col-3">
-                    Nom
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="col-2">
-                    Date début
-                </div>
-                <div class="col-2">
-                    Date fin
-                </div>
-                <div class="col-5">
-                    Liste des produits
-                </div>
+            @endif
+            @if (isset ($messages)) && (if ($messages->any()))
+            <div class="alert alert-success">
+                <ul>
+                    @foreach ($messages->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
             </div>
-            @foreach ($campaigns as $campaign)
-                <div class="card">
-                    <div class="row">
-                        <div class="col-3">
-                            {{ $campaign->description }}
-                        </div>
-                        <div class="col-2">
-                            {{ $campaign->date_start}}
-                        </div>
-                        <div class="col-2">
-                            {{ $campaign->date_end}}
-                        </div>
-                        <div class="col-5">
+            @endif
+        </div>
+        <div class="container text-center mt-3">
+            <div class="row bg-dark text-light font-weight-bold p-2 mb-4 m-1">Liste des campagnes</div>
+            <a href="{{ route('campaigns.create') }}">
+                <button type="submit" class="btn btn-secondary mb-3"><i class="fas fa-plus-circle"></i> Créer une
+                    campagne
+                </button>
+            </a>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Date début</th>
+                    <th scope="col">Date fin</th>
+                    <th scope="col">produits</th>
+                    <th scope="col">options</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($campaigns as $campaign)
+                    <tr class="table-info">
+                        <th scope="row">{{ $campaign->description }}</th>
+                        <td> {{ $campaign->date_start}}</td>
+                        <td>{{ $campaign->date_end}}</td>
+                        <td>
                             @foreach ($campaign -> products as $product)
                                 {{ $product->name }}<br>
                             @endforeach
-                        </div>
-                    </div>
-                    <a href="{{ route('campaigns.edit', $campaign) }}">
-                        <button class="btn btn-secondary mb-3">Modifier les produits</button>
-                    </a>
-                    <form action="{{ route('campaigns.destroy', $campaign) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-secondary mb-3">Supprimer la campagne</button>
-                    </form>
-                </div>
-            @endforeach
+                        </td>
+                        <td class="row w-75">
+                            <div class="col-6">
+                                <a href="{{ route('campaigns.edit', $campaign) }}">
+                                    <button type="submit" class="btn btn-secondary mb-3"><i class="fas fa-pen"></i>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <form action="{{ route('campaigns.destroy', $campaign) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-secondary mb-3"><i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </main>
 
