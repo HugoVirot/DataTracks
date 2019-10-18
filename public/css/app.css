@@ -10776,6 +10776,11 @@ body {
 
 /*  ****  CARD ****  */
 
+.card-body-logs {
+  padding: 0px !important;
+  padding-top: 0px !important;
+}
+
 /*  ****  CARD ****  */
 
 .card {
@@ -10905,6 +10910,10 @@ body {
   font-size: 55px;
   padding: 0;
   margin: 0;
+}
+
+.bg-dataTrack {
+  background-color: #5f6a70;
 }
 
 .p-tracks {

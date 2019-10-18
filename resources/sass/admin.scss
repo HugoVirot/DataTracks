@@ -159,6 +159,10 @@ body {
 
 }
 
+.card-body-logs {
+    padding: 0px ! important;
+    padding-top: 0px !important;
+}
 /*  ****  CARD ****  */
 .card {
     padding: 0px ! important;
@@ -296,6 +300,9 @@ body {
 
 }
 
+.bg-dataTrack{
+    background-color: $bg-nav-color;
+}
 .p-tracks {
     text-align: end;
     color: darken($bg-nav-color, 55);
