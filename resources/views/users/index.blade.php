@@ -48,7 +48,8 @@
                                             {{csrf_field()}}
                                         <div class="field">
                                             <div class="contral">
-                                                <button type="submit" class="btn btn-secondary">Supprimer</button>
+                                                <button type="submit" class="btn btn-secondary"><i class="fas fa-trash"></i>
+</button>
                                             </div>
                                         </div>
                                     </form>
@@ -56,7 +57,7 @@
                                 </td>
 
                                 <td>@if(Auth::user()->isSuperAdmin(Auth::user()))
-                                        <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" >modifier</a>
+                                        <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" ><i class="fas fa-pen"></i></a>
                                     @endif
                                 </td>
                             </tr>
@@ -67,7 +68,8 @@
 
                 </div>
                 @if(Auth::user()->isSuperAdmin(Auth::user()))
-                    <a class= "btn btn-secondary" href="{{route('auth.custom.Registration')}}">Create User</a>
+                    <a class= "btn btn-secondary" href="{{route('auth.custom.Registration')}}"><i class="fas fa-plus-circle"></i>
+                        Create User</a>
                 @endif
             </div>
         </div>
