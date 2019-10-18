@@ -15,7 +15,7 @@
                 <form action="{{route('deleteAllLogs')}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger mb-1 w-25 float-right m-2"> Purge</button>
+                    <button type="submit" class="btn btn-danger mb-1 w-25 float-right m-2"> <i class="far fa-minus-square"></i> Purge</button>
                 </form>
             </div>
             <div class="card-body-logs">
