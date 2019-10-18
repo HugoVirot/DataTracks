@@ -36,10 +36,10 @@ class CampaignController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([     //method not found : ignorer, marche quand même (idem digidog)
+        $request->validate([
             'description' => 'required|min:5',
             'date_start' => 'required|date',
-            'date_end' => 'required|date',     //erreur si mdp identique à l'ancien
+            'date_end' => 'required|date',
         ]);
 
         $campaign = new Campaign;
@@ -120,9 +120,12 @@ class CampaignController extends Controller
      *
      * @param \App\Campaign $campaign
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Campaign $campaign)
     {
-        //
+        $campaign->products()->detach();
+        $campaign->delete();
+        return redirect()->route('campaigns.index')->with('message', 'La campagne a bien été supprimée');
     }
 }
