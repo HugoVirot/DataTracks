@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="container">
+
         <div class="card-body-user bg-dataTrack text-light p-3 mb-2">
             <h1 class="h1T" >Logs</h1>
         </div>
