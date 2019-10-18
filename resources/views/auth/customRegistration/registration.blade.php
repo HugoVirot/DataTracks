@@ -77,12 +77,11 @@
                                         <span class="error">{{ $errors->first('password') }}</span>
                                     @endif
                                 </div>
-                                <a class="btn btn-secondary btn-login text-uppercase font-weight-bold mb-2" href="{{url('users')}}" >
-                                    Retour
+                                <a class="btn btn-secondary btn-login text-uppercase font-weight-bold mb-2 mt-2" href="{{url('users')}}" >
+                                   Annuler
                                 </a>
-
-                                <button class="btn btn-primary btn-login text-uppercase font-weight-bold mb-2" type="submit">
-                                Valider
+                                <button class="btn btn-primary btn-login text-uppercase font-weight-bold mb-2 mt-2 float-right" type="submit">
+                                    Valider
                                 </button>
 
                             </form>
