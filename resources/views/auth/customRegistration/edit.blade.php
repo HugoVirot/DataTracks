@@ -61,7 +61,7 @@
                                                 Annuler
                                             </button>
 
-                                            <button class="btn btn-primary btn-login text-uppercase font-weight-bold mb-2 mt-2 float-right" type="submit">
+                                            <button class="btn btn-secondary btn-login text-uppercase font-weight-bold mb-2 mt-2 float-right" type="submit">
                                                 Valider
                                             </button>
 
