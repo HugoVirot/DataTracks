@@ -14,6 +14,11 @@
                                 <i class="iT fas fa-user badge-light"></i>
                             </div>
                         </div>
+                        <div class="w-100  title-card-2  pb-3">
+                            <div class="h2T w-100 flex-row justify-content-center">
+                                <i class="iT3 fas fa-user badge-light"></i>
+                            </div>
+                        </div>
                         <div class="login d-flex align-items-center py-5 modify">
                             <div class="container">
                                 <div class="row">
