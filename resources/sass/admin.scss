@@ -1,0 +1,394 @@
+// #461b4b #2f4858
+
+$bg-nav-color: #5f6a70;
+$text-nav-color: lighten($bg-nav-color, 49);
+$text-hover: lighten($bg-nav-color, 89);
+
+.button-text-color {
+    color: $text-nav-color;
+}
+
+body {
+    background-color: lighten($bg-nav-color, 100%) !important;
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Flama', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.m-b-md {
+    margin-bottom: 10px;
+}
+
+.row {
+    .col {
+        width: 100% !important;
+
+        .form-group {
+            textarea {
+                width: 100% !important;
+
+            }
+
+            select {
+                width: 100% !important;
+            }
+        }
+    }
+
+}
+
+.adminImgLogo {
+    width: 145px;
+    height: 145px;
+    //filter: grayscale(1);
+
+}
+
+.adminImgLogoMenu {
+    position: relative;
+    top: 0.6em;
+    width: 45px;
+    height: 45px;
+    //filter: grayscale(1);
+
+}
+
+
+.logo {
+    position: relative;
+    top: -50px;
+
+
+}
+
+.big-icon {
+    padding: 20px;
+    font-size: 50px;
+    color: $bg-nav-color;
+
+}
+
+.h1-color {
+    color: $bg-nav-color;
+    font-style: italic;
+}
+
+.vapor {
+    position: fixed;
+    opacity: 0.05;
+    font-size: 228px;
+    color: $bg-nav-color;
+}
+
+.color-active {
+    color: yellowgreen !important;
+}
+
+.wrapper-logo-admin {
+    position: relative;
+    padding: 8px 8px 8px 32px;
+    top: -13px;
+    left: -30px;
+}
+
+/* side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $bg-nav-color;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: 3px 0px 10px darken($bg-nav-color, 5%);
+}
+
+/* navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    width: 100%;
+
+    text-decoration: none;
+    background-color: $bg-nav-color;
+    font-size: 18px;
+    color: $text-nav-color;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a i {
+    position: relative;
+    left: -5px;
+}
+
+.sidenav a:hover {
+    color: $text-hover;
+    background-color: lighten($bg-nav-color, 15%);
+}
+
+.sidenav home {
+    background-color: $secondary !important;
+}
+
+.sidenav home:hover {
+
+}
+
+/* main right content */
+#main {
+    margin-left: 0px;
+}
+
+.main {
+    height: 100vh;
+}
+
+/*  ****  CARD ****  */
+.card-flat {
+
+}
+
+/*  ****  CARD ****  */
+.card {
+    padding: 0px ! important;
+
+    box-shadow: 0px 0px 0px darken($bg-nav-color, 55%);
+
+    .card-body {
+        padding: 0px ! important;
+        padding-top: 55px !important;
+
+        .title-card {
+            background-color: $bg-nav-color;
+            padding: 0px;
+            margin: 0 auto;
+            width: 100%;
+            height: 55px;
+
+            .h1T {
+                position: absolute;
+                color: lighten($bg-nav-color, 50);
+                width: 99%;
+                top: 66px;
+                font-weight: bold;
+                font-size: 20px;
+                padding-left: 5px;
+
+
+                    .iT {
+                        display: inline-block;
+                        border-radius: 60px;
+                        box-shadow: 0px 0px 2px #888;
+                        padding: 0.5em 0.6em;
+                        position: relative;
+                        top: -3px;
+                        right: 5px;
+                        float: right;
+                        color: $bg-nav-color;
+                    }
+
+            }
+
+        }
+
+    }
+
+    .card-body-user {
+        padding: 0px ! important;
+        padding-top: 0px !important;
+
+        .title-card {
+            background-color: $bg-nav-color;
+            padding: 0px;
+            margin: 0 auto;
+            width: 100%;
+            height: 55px;
+
+            .h1T {
+                position: absolute;
+                color: lighten($bg-nav-color, 50);
+                width: 99%;
+                top: 11px;
+                font-weight: bold;
+                font-size: 20px;
+                padding-left: 5px;
+
+
+                .iT {
+                    display: inline-block;
+                    border-radius: 60px;
+                    box-shadow: 0px 0px 2px #888;
+                    padding: 0.5em 0.6em;
+                    position: relative;
+                    top: -3px;
+                    right: 5px;
+                    float: right;
+                    color: $bg-nav-color;
+                }
+            }
+        }
+        .title-card-2 {
+            background-color: white;
+            padding: 0px;
+            margin: 0 auto;
+            width: 100%;
+            height: 80px;
+
+            .h2T {
+                position: absolute;
+                color: #343E4A;
+                width: 99%;
+                top: 66px;
+                font-weight: bold;
+                font-size: 30px;
+                padding-left: 430px;
+
+
+                .iT2 {
+                    display: inline-block;
+                    border-radius: 60px;
+                    box-shadow: 0px 0px 2px #888;
+                    padding: 0.5em 0.6em;
+                    position: relative;
+                    top: -3px;
+                    right: 700px;
+                    float: right;
+                    color: $bg-nav-color;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+.p-title {
+    color: lighten($bg-nav-color, 15);
+    font-size: 55px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.p-tracks {
+    text-align: end;
+    color: darken($bg-nav-color, 55);
+    font-size: 25px;
+    padding: 0;
+    margin-top: -35px;
+
+}
+
+.p-version {
+    text-align: center;
+    color: lighten($bg-nav-color, 15);
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.card-admin:hover {
+    background-color: lighten($bg-nav-color, 05%);
+    color: $text-hover;
+}
+
+.card-admin:hover i:not(:hover) {
+    color: $text-hover;
+}
+
+i:hover {
+    color: $text-hover;
+}
+
+.admin-fa-color {
+    color: $bg-nav-color;
+
+}
+
+.admin-fa-color:hover {
+    color: $text-hover;
+}
+
+.a-no-decoration {
+    color: darken(gray, 10);
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.a-no-decoration:hover {
+
+}
+
+.img-product-admin {
+    width: 4em;
+    height: 4em;
+}
+
+.small-img {
+    width: 4em;
+    height: 4em;
+}
+
+.icon-large {
+    font-size: 55px;
+}
+
+.toaster-info {
+    opacity: 0;
+    animation-duration: 7.5s;
+    animation-name: getOut;
+
+}
+
+.hr-note {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 10px 0 10px;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 8px;
+    line-height: 1;
+    border-top: 1px solid black;
+}
+
+
+@keyframes getOut {
+    from {
+
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        // background-color: lightblue;
+    }
+    #main {
+        margin-left: 0px;
+    }
+
+    .row {
+        width: 100% !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+}
