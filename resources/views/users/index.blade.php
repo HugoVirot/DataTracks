@@ -41,7 +41,15 @@
                                 <td>{{$user->surname }}</td>
                                 <td>{{$user->email }}</td>
                                 <td>{{$user->position }}</td>
-                                <td>@if(Auth::user()->isSuperAdmin(Auth::user()))
+                                <td>
+                                      @if(Auth::user()->isSuperAdmin(Auth::user()))
+                                        <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" ><i class="fas fa-pen"></i></a>
+                                    @endif
+
+                                </td>
+
+                                <td>
+                                   @if(Auth::user()->isSuperAdmin(Auth::user()))
                                         <form method="POST" action="/users/{{$user->id}}">
                                         {{method_field('DELETE')}}
                                             {{csrf_field()}}
@@ -52,11 +60,6 @@
                                             </div>
                                         </div>
                                     </form>
-                                    @endif
-                                </td>
-
-                                <td>@if(Auth::user()->isSuperAdmin(Auth::user()))
-                                        <a class="btn btn-secondary" href="{{route('auth.custom.registration.edit', $user)}}" ><i class="fas fa-pen"></i></a>
                                     @endif
                                 </td>
                             </tr>
