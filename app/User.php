@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','surname', 'email', 'password','position', 'role_id', 'updated_at', 'created_at', 'enabled', 'remember_token'
     ];
 
     /**
@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->hasOne('App\Role');
+    }
+
+
+    public function isSuperAdmin(User $user){
+        $role = Role::where('name','super_admin')->get();
+        return $user->role_id === $role[0]->id;
+    }
 }

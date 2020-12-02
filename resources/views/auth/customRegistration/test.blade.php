@@ -1,0 +1,5 @@
+@extends('layouts.app')
+
+@section('content')
+    <h1>Section modif </h1>
+@endsection
